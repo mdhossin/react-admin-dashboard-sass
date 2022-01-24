@@ -1,0 +1,139 @@
+@use "../../scss/abstracts/" as *;
+.product {
+  flex: 4;
+
+  &__titleContainer {
+    @include flex(center, space-between);
+    padding: rem(20);
+
+    &__title {
+      font-weight: 600;
+    }
+
+    &__button {
+      border: none;
+      padding: rem(8) rem(22);
+      background-color: teal;
+      border-radius: rem(5);
+      cursor: pointer;
+      color: white;
+      font-size: rem(16);
+    }
+  }
+
+  &__productTop {
+    display: flex;
+
+    &__left,
+    &__right {
+      flex: 1;
+    }
+
+    &__right {
+      padding: rem(20);
+      margin: rem(20);
+      box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+      &__top {
+        @include flex(center, flex-start);
+
+        &__img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-right: rem(20);
+        }
+
+        &__name {
+          font-weight: 600;
+        }
+      }
+
+      &__info {
+        margin-top: rem(10);
+        &__item {
+          width: 250px;
+          @include flex(stretch, space-between);
+          margin-top: rem(8);
+          &__key {
+            font-size: rem(16);
+          }
+
+          &__value {
+            font-weight: 400;
+            font-size: rem(16);
+          }
+        }
+      }
+    }
+  }
+
+  &__productBottom {
+    padding: rem(20);
+    margin: rem(20);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+
+    &__form {
+      @include flex(stretch, space-between);
+      &__left {
+        display: flex;
+        flex-direction: column;
+        > label {
+          margin-bottom: rem(10);
+          color: gray;
+        }
+        > input {
+          border: none;
+          width: 250px;
+          height: rem(30);
+          border-bottom: 1px solid gray;
+
+          padding: rem(22) rem(10);
+          outline: none;
+          transition: 0.5s;
+
+          border-radius: rem(5);
+          font-size: rem(16);
+
+          &:focus {
+            border-color: var(--button-color);
+          }
+        }
+        > select {
+          margin-bottom: rem(10);
+          padding: rem(10) rem(5);
+          outline: none;
+          &:focus {
+            border-color: var(--button-color);
+          }
+        }
+      }
+
+      &__right {
+        @include flex(stretch, space-evenly);
+        flex-direction: column;
+
+        &__productUpload {
+          @include flex(center, flex-start);
+          &__img {
+            width: 100px;
+            height: 100px;
+            border-radius: rem(10);
+            object-fit: cover;
+            margin-right: rem(20);
+          }
+        }
+
+        &__update {
+          border: none;
+          padding: rem(8) rem(22);
+          background-color: teal;
+          border-radius: rem(5);
+          cursor: pointer;
+          color: white;
+          font-size: rem(16);
+        }
+      }
+    }
+  }
+}

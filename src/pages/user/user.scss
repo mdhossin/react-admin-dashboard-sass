@@ -1,0 +1,168 @@
+@use "../../scss/abstracts/" as *;
+
+.user {
+  flex: 4;
+  padding: rem(20);
+
+  &__titleContainer {
+    @include flex(center, space-between);
+    &__editUser {
+      font-size: rem(28);
+      font-weight: 700;
+    }
+    &__createUser {
+      border: none;
+      padding: rem(8) rem(22);
+      background-color: teal;
+      border-radius: rem(5);
+      cursor: pointer;
+      color: white;
+      font-size: rem(16);
+    }
+  }
+
+  &__userContainer {
+    display: flex;
+    margin-top: rem(20);
+
+    // profile detail style
+    &__profile {
+      flex: 1;
+      padding: rem(25);
+      box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+      &__top {
+        @include flex(center, flex-start);
+        &__img {
+          --size: 40px;
+          width: var(--size);
+          height: var(--size);
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        &__fullTitle {
+          display: flex;
+          flex-direction: column;
+          margin-left: rem(20);
+          &__name {
+            font-weight: 600;
+            color: var(--title-color);
+          }
+
+          &__title {
+            font-weight: 300;
+          }
+        }
+      }
+
+      // acount detail
+      &__accountDetail {
+        margin-top: rem(20);
+        &__title {
+          font-size: rem(14);
+          font-weight: 600;
+          color: rgb(175, 170, 170);
+        }
+
+        &__info {
+          @include flex(center, flex-start);
+          margin: rem(16) 0px;
+          color: #444;
+          &-icon {
+            font-size: rem(14) !important;
+          }
+
+          &-title {
+            margin-left: rem(10);
+          }
+        }
+      }
+    }
+
+    // update user style
+    &__updateUser {
+      flex: 2;
+      padding: rem(25);
+      box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+      margin-left: rem(20);
+
+      &__title {
+        font-size: rem(24);
+        font-weight: 600;
+        color: var(--title-color);
+      }
+
+      &__form {
+        @include flex(stretch, space-between);
+        margin-top: rem(20);
+        &__left {
+          &__item {
+            display: flex;
+            flex-direction: column;
+            margin-top: rem(10);
+            > label {
+              margin-bottom: rem(5);
+              font-size: rem(16);
+              color: var(--title-color);
+            }
+
+            &__input {
+              border: none;
+              width: 250px;
+              height: rem(30);
+              border-bottom: 1px solid gray;
+
+              padding: 22px 10px;
+              outline: none;
+              transition: 0.5s;
+
+              border-radius: 5px;
+              font-size: 16px;
+
+              &:focus {
+                border-color: var(--button-color);
+              }
+            }
+          }
+        }
+
+        &__right {
+          @include flex(stretch, space-between);
+          flex-direction: column;
+
+          &__fileUpload {
+            @include flex(stretch, flex-start);
+
+            &__img {
+              width: 100px;
+              height: 100px;
+              border-radius: rem(10);
+              object-fit: cover;
+              margin-right: rem(20);
+            }
+
+            &__file {
+              @include flex(center, flex-start);
+              background-color: #1565c0;
+              border-radius: 10px;
+              color: white;
+              padding: 9px 22px;
+
+              cursor: pointer;
+            }
+          }
+
+          &__button {
+            border-radius: rem(5);
+            border: none;
+            padding: rem(5);
+            cursor: pointer;
+            background-color: rgb(81, 81, 172);
+            color: white;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}

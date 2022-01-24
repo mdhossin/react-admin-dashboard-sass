@@ -14,7 +14,7 @@ const sidebarNav = [
     heading: "Dashboard",
     menu: [
       {
-        link: "/home",
+        link: "/",
         section: "Home",
         icon: (
           <LineStyleIcon className="sidebar__wrapper__menu__list__item-icon" />
