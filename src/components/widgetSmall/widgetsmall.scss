@@ -1,0 +1,55 @@
+@use "../../scss/abstracts/" as *;
+
+.widgetSmall {
+  flex: 1;
+  padding: rem(20);
+  margin-right: rem(20);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+
+  &__title {
+    font-size: rem(22);
+    font-weight: 600;
+  }
+
+  &__list {
+    &__item {
+      @include flex(center, space-between);
+      margin: rem(20) 0px;
+
+      &__img {
+        --size: 40px;
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      &__user {
+        display: flex;
+        flex-direction: column;
+        &__name {
+          font-weight: 600;
+        }
+
+        &__title {
+          font-weight: 300;
+        }
+      }
+
+      &__button {
+        @include flex(center, flex-start);
+        border: none;
+        border-radius: rem(10);
+        padding: rem(7) rem(10);
+        background-color: #eeeef7;
+        color: #555;
+        cursor: pointer;
+
+        &__icon {
+          font-size: rem(16) !important;
+          margin-right: rem(5);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@use "../../scss/abstracts/" as *;
+.widgetLarge {
+  flex: 2;
+  padding: rem(20);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+
+  &__title {
+    font-size: rem(22);
+    font-weight: 600;
+  }
+
+  &__table {
+    width: 100%;
+    border-spacing: rem(20);
+    &__row {
+      text-align: left;
+      &__user {
+        @include flex(center, flex-start);
+        font-weight: 600;
+        &__img {
+          --size: 40px;
+          width: var(--size);
+          height: var(--size);
+          border-radius: 50%;
+          object-fit: cover;
+          margin-right: rem(10);
+        }
+      }
+
+      &__date,
+      &__amount {
+        font-weight: 400;
+        color: var(--button-color);
+      }
+
+      &__status {
+        &__button {
+          padding: rem(8) rem(12);
+          border: none;
+          border-radius: rem(10);
+          font-size: rem(15);
+
+          &.Approved {
+            background-color: #e5faf2;
+            color: #3bb077;
+          }
+
+          &.Declined {
+            background-color: #fff0f1;
+            color: #d95087;
+          }
+
+          &.Pending {
+            background-color: #ebf1fe;
+            color: #2a7ade;
+          }
+        }
+      }
+    }
+  }
+}

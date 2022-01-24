@@ -1,0 +1,48 @@
+@use "../../scss/abstracts/" as *;
+
+.featured {
+  width: 100%;
+  @include flex(stretch, space-between);
+
+  &__item {
+    flex: 1;
+    margin: 0px rem(20);
+    padding: rem(30);
+    border-radius: rem(10);
+    cursor: pointer;
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+
+    &__title {
+      font-size: rem(20);
+    }
+
+    &__container {
+      margin: rem(10) 0px;
+      @include flex(center, flex-start);
+      &__money {
+        font-size: rem(30);
+        font-weight: 600;
+      }
+
+      &__rate {
+        @include flex(center, flex-start);
+        margin-left: rem(20);
+
+        &__icon {
+          font-size: rem(30);
+          margin-left: rem(5);
+          color: red;
+
+          &.negative {
+            color: green;
+          }
+        }
+      }
+    }
+
+    &__subTitle {
+      font-size: rem(15);
+      color: gray;
+    }
+  }
+}

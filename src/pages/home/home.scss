@@ -1,0 +1,10 @@
+@use "../../scss/abstracts/" as *;
+.home {
+  flex: 4;
+  background-color: #fff;
+
+  &__widgets {
+    display: flex;
+    margin: rem(20);
+  }
+}
